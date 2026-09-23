@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply transition-colors duration-200 bg-slate-50 text-slate-900 font-sans overflow-x-hidden;
+    touch-action: manipulation;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-rose-600;
+}
+
+/* Smooth pulse animation for hero badge */
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 3s infinite ease-in-out;
+}
